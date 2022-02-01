@@ -20,8 +20,5 @@ if submit:
 	for i in url:
 		endpoint= f"https://bing.com/indexnow?url={i}&key={api_key}"
 		response = requests.get(endpoint)
-		print(i)
-		print(endpoint)
-		print(response.status_code, response.content)
+		st.write(response.status_code, response.content)
 		time.sleep(5)
-    st.write(response.status_code, response.content)
