@@ -17,14 +17,14 @@ api_key = form.text_input("Insert your API key")
 xml_sitemap = form.text_input("Insert your XML sitemap url")
 
 urls_list = form.file_uploader("Choose a CSV file", accept_multiple_files=True, type=["csv"])
-if urls_list is not None:
-	dataframe = pd.read_csv(urls_list)
-	urls = dataframe.to_list()
+
 submit = form.form_submit_button('Submit')
 
 if submit:
+	urls_list is not None:
+	dataframe = pd.read_csv(urls_list)
+	urls = dataframe.to_list()
 	sitemap_urls = adv.sitemap_to_df(xml_sitemap)
-	urls_df = pd.read_csv(urls_list)
 	urls = sitemap_urls["loc"].to_list()
 	for i in urls:
 		endpoint= f"https://bing.com/indexnow?url={i}&key={api_key}"
