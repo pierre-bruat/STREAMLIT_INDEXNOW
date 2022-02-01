@@ -16,7 +16,7 @@ def input_to_df(input):
 	df = pd.read_csv(uploaded_file)
 	return df
 
-
+st.title("INDEX MY URLS NOW by Indexnow 🤖")
 with st.expander('Index my URLS now with list of urls'):
 	form = st.form(key='my-form')
 	api_key = form.text_input("Insert your API key")
