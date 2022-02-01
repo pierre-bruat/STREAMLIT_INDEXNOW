@@ -25,6 +25,7 @@ if submit:
 	urls_df = pd.read_csv(urls_list)
 	urls_2 = urls_df.values.tolist()
 	urls = sitemap_urls["loc"].to_list()
+	st.write(urls_list)
 	for i in urls:
 		endpoint= f"https://bing.com/indexnow?url={i}&key={api_key}"
 		response = requests.get(endpoint)
@@ -33,12 +34,4 @@ if submit:
 			st.write(f"✅ URL submitted successfully for {i}")
 		else: st.write(f"❌ something went wrong with {i}")
 		time.sleep(2)
-	
-	for y in urls_2:
-		endpoint= f"https://bing.com/indexnow?url={y}&key={api_key}"
-		response = requests.get(endpoint)
-		st.write(response)
-		if response != "error":
-			st.write(f"✅ URL submitted successfully for {y}")
-		else: st.write(f"❌ something went wrong with {y}")
-		time.sleep(2)
+
