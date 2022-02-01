@@ -27,8 +27,8 @@ if submit:
 	sitemap_urls = adv.sitemap_to_df(xml_sitemap)
 	urls = sitemap_urls["loc"].to_list()
 	if uploaded_file is not None:
-        dataframe = pd.read_csv(uploaded_file)
-	st.write(dataframe)
+		dataframe = pd.read_csv(uploaded_file)
+		st.write(dataframe)
 	#for i in urls:
 		#endpoint= f"https://bing.com/indexnow?url={i}&key={api_key}"
 		#response = requests.get(endpoint)
