@@ -20,6 +20,8 @@ if submit:
 	for i in url:
 		endpoint= f"https://bing.com/indexnow?url={i}&key={api_key}"
 		response = requests.get(endpoint)
-		st.write(response)
+		if response == "<Response [200]>":
+			st.write(f"Job is done for"{i})
+		else st.write(f"something went wrong with"{i})
 		#st.write(response.status_code, response.content)
-		time.sleep(5)
+		time.sleep(2)
