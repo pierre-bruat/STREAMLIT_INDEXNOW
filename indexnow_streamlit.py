@@ -6,8 +6,8 @@ import time
 import io
 import streamlit as st
 
-@st.cache
 
+@st.cache
 
 ###### FORMULAIRE ########
 header = st.title('Index my urls now')
@@ -17,7 +17,7 @@ xml_sitemap = form.text_input("Insert your XML sitemap url")
 urls_list = form.file_uploader("Choose a CSV file", accept_multiple_files=True)
 
 if submit:
-    sitemap_urls = adv.sitemap_to_df(xml_sitemap)
+	sitemap_urls = adv.sitemap_to_df(xml_sitemap)
     url = sitemap_urls["loc"].to_list()
     for i in url:
     	endpoint= f"https://bing.com/indexnow?url={i}&key={api_key}"
