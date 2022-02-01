@@ -16,8 +16,8 @@ urls_list = form.file_uploader("Choose a CSV file", accept_multiple_files=True)
 
 if submit:
 	sitemap_urls = adv.sitemap_to_df(xml_sitemap)
-    url = sitemap_urls["loc"].to_list()
-    for i in url:
+	url = sitemap_urls["loc"].to_list()
+	for i in url:
     	endpoint= f"https://bing.com/indexnow?url={i}&key={api_key}"
     	response = requests.get(endpoint)
     	print(i)
