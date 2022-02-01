@@ -17,7 +17,7 @@ def input_to_df(input):
 	return df
 
 st.title("Index my urls now ! 🤖")
-with st.expander('Index my URLS now with list of urls'):
+with st.expander('from a list of urls'):
 	form = st.form(key='my-form')
 	api_key = form.text_input("Insert your API key")
 	uploaded_file = form.file_uploader("Upload your CSV file")
@@ -36,7 +36,7 @@ with st.expander('Index my URLS now with list of urls'):
 			time.sleep(2)
 
 
-with st.expander('Index my URLS now with XML sitemap'):
+with st.expander('from XML sitemap'):
 	form_2 = st.form(key='my-form-2')
 	api_key = form_2.text_input("Insert your API key")
 	xml_sitemap = form_2.text_input("Insert your XML sitemap url")
