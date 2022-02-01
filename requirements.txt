@@ -5,4 +5,4 @@ bs4
 requests
 times
 streamlit-tags
-Json
+json
