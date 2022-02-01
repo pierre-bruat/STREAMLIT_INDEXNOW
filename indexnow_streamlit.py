@@ -28,18 +28,16 @@ submit = form.form_submit_button('Submit')
 
 if submit:
 	#sitemap_urls = adv.sitemap_to_df(xml_sitemap)
-	dataframe = input_to_df(uploaded_file)
-	st.write(dataframe)
-	#for i in urls:
-		#endpoint= f"https://bing.com/indexnow?url={i}&key={api_key}"
-		#response = requests.get(endpoint)
-		#st.write(response)
-		#if response != "error":
-			#st.write(f"✅ URL submitted successfully for {i}")
-		#else: st.write(f"❌ something went wrong with {i}")
-		#time.sleep(2)
-	#for in urls_list:
-
+	urls = input_to_df(uploaded_file)
+	urls = urls["urls"].to_list()
+	#st.write(dataframe)
+	for i in urls:
+		endpoint= f"https://bing.com/indexnow?url={i}&key={api_key}"
+		response = requests.get(endpoint)
+		if response != "error":
+			st.write(f"✅ URL submitted successfully for {i}")
+		else: st.write(f"❌ something went wrong with {i}")
+		time.sleep(2)
 
 
 
