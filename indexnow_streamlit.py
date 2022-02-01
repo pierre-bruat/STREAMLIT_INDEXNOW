@@ -21,7 +21,6 @@ urls_list = form.file_uploader("Choose a CSV file", accept_multiple_files=True, 
 submit = form.form_submit_button('Submit')
 
 if submit:
-	urls_list is not None:
 	dataframe = pd.read_csv(urls_list)
 	urls = dataframe.to_list()
 	sitemap_urls = adv.sitemap_to_df(xml_sitemap)
