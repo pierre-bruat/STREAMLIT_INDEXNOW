@@ -15,12 +15,10 @@ form = st.form(key='my-form')
 
 api_key = form.text_input("Insert your API key")
 xml_sitemap = form.text_input("Insert your XML sitemap url")
-urls_list = form.file_uploader("Choose a CSV file", accept_multiple_files=True, type=["csv"])
+urls_list = form.file_uploader("Choose a CSV file", accept_multiple_files=True, type=["txt"])
 submit = form.form_submit_button('Submit')
 
 if submit:
-	dataframe = pd.read_csv(urls_list)
-	urls = dataframe.to_list()
 	sitemap_urls = adv.sitemap_to_df(xml_sitemap)
 	urls = sitemap_urls["loc"].to_list()
 	for i in urls, urls_list:
