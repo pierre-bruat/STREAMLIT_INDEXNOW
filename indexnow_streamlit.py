@@ -22,6 +22,6 @@ if submit:
 		response = requests.get(endpoint)
 		st.write(response)
 		if response != "error":
-			st.write(f"Job is done for {i}")
-		else: st.write(f"something went wrong with {i}")
+			st.write(f"✅ URL submitted successfully for {i}")
+		else: st.write(f"❌ something went wrong with {i}")
 		time.sleep(2)
