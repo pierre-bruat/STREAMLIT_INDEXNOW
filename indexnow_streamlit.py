@@ -21,6 +21,7 @@ submit = form.form_submit_button('Submit')
 if submit:
 	sitemap_urls = adv.sitemap_to_df(xml_sitemap)
 	urls = sitemap_urls["loc"].to_list()
+	urls_list = urls_list.split(",")
 	for i in urls, urls_list:
 		endpoint= f"https://bing.com/indexnow?url={i}&key={api_key}"
 		response = requests.get(endpoint)
