@@ -24,6 +24,7 @@ if submit:
 		else: st.write(f"❌ something went wrong with {i}")
 		time.sleep(2)
 
+form = st.form(key='my-form-2')
 xml_sitemap = form_.text_input("Insert your XML sitemap url")
 submit = form.form_submit_button('Submit')
 if submit:
