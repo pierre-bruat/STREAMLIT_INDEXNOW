@@ -37,7 +37,8 @@ if submit:
 		else: st.write(f"❌ something went wrong with {i}")
 		time.sleep(2)
 if submit:
-	st.write(urls_list)
+	urls_df = pd.read_csv(urls_list)
+	st.write(urls_df)
 	
 
 
