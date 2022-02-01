@@ -9,11 +9,10 @@ import streamlit as st
 
 ###### FORMULAIRE ########
 header = st.title('Index my urls now')
-
 form = st.form(key='my-form')
 api_key = form.text_input("Insert your API key")
-urls_list = form.file_uploader("Choose a CSV file", accept_multiple_files=True)
-xml_sitemap = form_.text_input("Insert your XML sitemap url")
+#urls_list = form.file_uploader("Choose a CSV file", accept_multiple_files=True)
+xml_sitemap = form.text_input("Insert your XML sitemap url")
 submit = form.form_submit_button('Submit')
 #if submit:
 	#for i in urls_list:
