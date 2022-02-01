@@ -16,12 +16,12 @@ urls_list = form.file_uploader("Choose a CSV file", accept_multiple_files=True)
 submit = form.form_submit_button('Submit')
 if submit:
 	sitemap_urls = adv.sitemap_to_df(xml_sitemap)
-	url = sitemap_urls["loc"].to_list()
-	for i in url:
+	urls = sitemap_urls["loc"].to_list()
+	for i in urls:
 		endpoint= f"https://bing.com/indexnow?url={i}&key={api_key}"
 		response = requests.get(endpoint)
 		if response == "<Response [200]>":
-			st.write(f"Job is done for{i}")
-		else st.write(f"something went wrong with{i}")
+			st.write(f"Job is done for {i}")
+			else st.write(f"something went wrong with {i}")
 		#st.write(response.status_code, response.content)
 		time.sleep(2)
