@@ -12,8 +12,8 @@ header = st.title('Index my urls now')
 form = st.form(key='my-form')
 api_key = form.text_input("Insert your API key")
 urls_list = form.file_uploader("Choose a CSV file", accept_multiple_files=True)
-submit = form.form_submit_button('Submit')
-if submit:
+submit_1 = form.form_submit_button('Submit')
+if submit_1:
 	for i in urls_list:
 		endpoint= f"https://bing.com/indexnow?url={i}&key={api_key}"
 		response = requests.get(endpoint)
@@ -24,8 +24,8 @@ if submit:
 		time.sleep(2)
 
 xml_sitemap = form.text_input("Insert your XML sitemap url")
-submit = form.form_submit_button('Submit')
-if submit:
+submit_2 = form.form_submit_button('Submit')
+if submit_2:
 	sitemap_urls = adv.sitemap_to_df(xml_sitemap)
 	urls = sitemap_urls["loc"].to_list()
 	for i in urls:
