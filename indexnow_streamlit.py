@@ -47,7 +47,7 @@ if submit:
 		#time.sleep(2)
 
 header_2 = st.title('Index my urls now with list of urls')
-form_2 = st.form(key='my-form')
+form_2 = st.form(key='my-form-2')
 api_key = form_2.text_input("Insert your API key")
 xml_sitemap = form_2.text_input("Insert your XML sitemap url")
 submit_2 = form_2.form_submit_button('Submit')
