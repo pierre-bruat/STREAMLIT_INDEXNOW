@@ -39,13 +39,13 @@ if submit:
 		else: st.write(f"❌ something went wrong with {i}")
 		time.sleep(2)
 
-	for y in sitemap_urls:
-		endpoint= f"https://bing.com/indexnow?url={y}&key={api_key}"
-		response = requests.get(endpoint)
-		if response != "error":
-			st.write(f"✅ URL submitted successfully for {y}")
-		else: st.write(f"❌ something went wrong with {y}")
-		time.sleep(2)
+	#for y in sitemap_urls:
+		#endpoint= f"https://bing.com/indexnow?url={y}&key={api_key}"
+		#response = requests.get(endpoint)
+		#if response != "error":
+			#st.write(f"✅ URL submitted successfully for {y}")
+		#else: st.write(f"❌ something went wrong with {y}")
+		#time.sleep(2)
 
 
 
