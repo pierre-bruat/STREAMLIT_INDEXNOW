@@ -13,8 +13,8 @@ from urllib import request
 ###### FORMULAIRE ########
 
 def input_to_df(input):
-	if uploaded_file is not None:
-	dataframe = pd.read_csv(uploaded_file)
+	df = pd.read_csv(uploaded_file)
+	return df
 
 
 
