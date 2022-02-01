@@ -14,14 +14,13 @@ from urllib import request
 
 
 header = st.title('Index my urls now')
-form = st.form(key='my-form')
 
-api_key = form.text_input("Insert your API key")
-xml_sitemap = form.text_input("Insert your XML sitemap url")
+api_key = text_input("Insert your API key")
+xml_sitemap = text_input("Insert your XML sitemap url")
 uploaded_file = st.file_uploader("Upload your keywords")
 
 
-submit = form.form_submit_button('Submit')
+submit = form_submit_button('Submit')
 
 if submit:
 	sitemap_urls = adv.sitemap_to_df(xml_sitemap)
