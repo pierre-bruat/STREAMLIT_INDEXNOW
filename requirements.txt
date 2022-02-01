@@ -4,3 +4,4 @@ urllib3
 bs4
 requests
 times
+git+https://github.com/eliasdabbas/advertools.git
