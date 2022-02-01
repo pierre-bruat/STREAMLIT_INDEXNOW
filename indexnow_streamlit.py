@@ -10,7 +10,7 @@ import streamlit as st
 
 
 ###### FORMULAIRE ########
-header = st.title('Index my urls now !')
+header = st.title("Index my urls now !")
 form = st.form(key='my-form')
 api_key = form.text_input("Insert your API key")
 xml_sitemap = form.text_input("Insert your XML sitemap url")
