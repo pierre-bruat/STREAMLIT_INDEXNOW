@@ -18,6 +18,10 @@ header = st.title('Index my urls now')
 form = st.form(key='my-form')
 api_key = form.text_input("Insert your API key")
 xml_sitemap = form.text_input("Insert your XML sitemap url")
+if submit:
+	st.write(urls_list)
+
+
 urls_list = form.file_uploader("Choose a CSV file", accept_multiple_files=True, type=["txt"])
 submit = form.form_submit_button('Submit')
 if submit:
