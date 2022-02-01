@@ -25,7 +25,6 @@ api_key = form.text_input("Insert your API key")
 xml_sitemap = form.text_input("Insert your XML sitemap url")
 uploaded_file = form.file_uploader("Upload your CSV file")
 submit = form.form_submit_button('Submit')
-
 if submit:
 	#sitemap_urls = adv.sitemap_to_df(xml_sitemap)
 	#sitemap_urls = sitemap_urls["loc"].to_list()
@@ -48,4 +47,20 @@ if submit:
 		#time.sleep(2)
 
 
+form = st.form(key='my-form')
+api_key = form.text_input("Insert your API key")
+xml_sitemap = form.text_input("Insert your XML sitemap url")
+submit = form.form_submit_button('Submit')
+if submit:
+	sitemap_urls = adv.sitemap_to_df(xml_sitemap)
+	sitemap_urls = sitemap_urls["loc"].to_list()
+	#urls_loaded = input_to_df(uploaded_file)
+	#urls_loaded = urls_loaded["urls"].to_list()
+	for y in sitemap_urls:
+		endpoint= f"https://bing.com/indexnow?url={y}&key={api_key}"
+		response = requests.get(endpoint)
+		if response != "error":
+			st.write(f"✅ URL submitted successfully for {y}")
+		else: st.write(f"❌ something went wrong with {y}")
+		time.sleep(2)
 
