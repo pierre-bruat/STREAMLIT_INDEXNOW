@@ -24,3 +24,4 @@ if submit:
 		print(endpoint)
 		print(response.status_code, response.content)
 		time.sleep(5)
+    st.write(response.status_code, response.content)
