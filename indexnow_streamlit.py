@@ -20,7 +20,7 @@ if submit:
 	for i in urls:
 		endpoint= f"https://bing.com/indexnow?url={i}&key={api_key}"
 		response = requests.get(endpoint)
-		if response = "<Response [200]>":
+		if response == "Response [200]":
 			st.write(f"Job is done for {i}")
 		else: st.write(f"something went wrong with {i}")
 		#st.write(response)
