@@ -20,7 +20,7 @@ submit = form.form_submit_button('Submit')
 urls_list = st.file_uploader("Choose a CSV file", accept_multiple_files=True, type=["csv"])
 if urls_list is not None:
 	dataframe = pd.read_csv(urls_list)
-	urls = urls_df.values.tolist()
+	urls = dataframe.to_list()
 
 
 if submit:
