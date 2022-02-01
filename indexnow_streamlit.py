@@ -22,7 +22,7 @@ urls_list = form.file_uploader("Choose a CSV file", accept_multiple_files=True, 
 submit = form.form_submit_button('Submit')
 
 if submit:
-	 urls_list = stringio.read()
-     st.write(urls_list)	
+	urls_list = stringio.read()
+    st.write(urls_list)	
 
 
