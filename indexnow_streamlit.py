@@ -47,11 +47,11 @@ if submit:
 		#time.sleep(2)
 
 
-form = st.form(key='my-form')
+form_2 = st.form(key='my-form')
 api_key = form.text_input("Insert your API key")
-xml_sitemap = form.text_input("Insert your XML sitemap url")
-submit = form.form_submit_button('Submit')
-if submit:
+xml_sitemap = form_2.text_input("Insert your XML sitemap url")
+submit_2 = form_2.form_submit_button('Submit')
+if submit_2:
 	sitemap_urls = adv.sitemap_to_df(xml_sitemap)
 	sitemap_urls = sitemap_urls["loc"].to_list()
 	#urls_loaded = input_to_df(uploaded_file)
