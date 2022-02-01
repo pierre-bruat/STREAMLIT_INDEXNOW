@@ -18,7 +18,7 @@ def input_to_df(input):
 
 
 
-header = st.title('Index my urls now')
+header = st.title('Index my urls now with XML sitemap')
 
 form = st.form(key='my-form')
 api_key = form.text_input("Insert your API key")
@@ -46,9 +46,9 @@ if submit:
 		#else: st.write(f"❌ something went wrong with {y}")
 		#time.sleep(2)
 
-
+header_2 = st.title('Index my urls now with list of urls')
 form_2 = st.form(key='my-form')
-api_key = form.text_input("Insert your API key")
+api_key = form_2.text_input("Insert your API key")
 xml_sitemap = form_2.text_input("Insert your XML sitemap url")
 submit_2 = form_2.form_submit_button('Submit')
 if submit_2:
