@@ -11,14 +11,18 @@ import streamlit as st
 header = st.title('Index my urls now')
 form = st.form(key='my-form')
 api_key = form.text_input("Insert your API key")
+
 urls_list = st.file_uploader("Choose a CSV file", accept_multiple_files=True, type=["csv"])
+if urls_list is not None:
+	dataframe = pd.read_csv(urls_list)
+	urls = urls_df.values.tolist()
+
+
 xml_sitemap = form.text_input("Insert your XML sitemap url")
 submit = form.form_submit_button('Submit')
 if submit:
 	sitemap_urls = adv.sitemap_to_df(xml_sitemap)
 	urls_df = pd.read_csv(urls_list)
-	dataframe = pd.read_csv(urls_list)
-	urls = urls_df.values.tolist()
 	urls = sitemap_urls["loc"].to_list()
 	for i in urls:
 		endpoint= f"https://bing.com/indexnow?url={i}&key={api_key}"
