@@ -19,16 +19,16 @@ def input_to_df(input):
 
 
 header = st.title('Index my urls now')
-form = st.form(key='my-form')
 
+form = st.form(key='my-form')
 api_key = form.text_input("Insert your API key")
 xml_sitemap = form.text_input("Insert your XML sitemap url")
 uploaded_file = form.file_uploader("Upload your CSV file")
 submit = form.form_submit_button('Submit')
 
 if submit:
-	sitemap_urls = adv.sitemap_to_df(xml_sitemap)
-	sitemap_urls = sitemap_urls["loc"].to_list()
+	#sitemap_urls = adv.sitemap_to_df(xml_sitemap)
+	#sitemap_urls = sitemap_urls["loc"].to_list()
 	urls_loaded = input_to_df(uploaded_file)
 	urls_loaded = urls_loaded["urls"].to_list()
 	for i in urls_loaded:
