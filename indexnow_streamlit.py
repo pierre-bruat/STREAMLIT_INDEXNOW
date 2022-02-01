@@ -6,6 +6,9 @@ import time
 import io
 import streamlit as st
 
+from io import StringIO
+from urllib import request
+
 
 ###### FORMULAIRE ########
 
@@ -14,16 +17,18 @@ header = st.title('Index my urls now')
 form = st.form(key='my-form')
 
 api_key = form.text_input("Insert your API key")
-#xml_sitemap = form.text_input("Insert your XML sitemap url")
-urls_list = form.file_uploader("Choose a CSV file", accept_multiple_files=True, type=["txt"])
+xml_sitemap = form.text_input("Insert your XML sitemap url")
+uploaded_file = st.file_uploader("Upload your keywords")
+
+
 submit = form.form_submit_button('Submit')
 
 if submit:
-	#sitemap_urls = adv.sitemap_to_df(xml_sitemap)
-	#urls = sitemap_urls["loc"].to_list()
-	print(urls_list)
-	df = pd.Dataframe(urls_list)
-	st.write(df)
+	sitemap_urls = adv.sitemap_to_df(xml_sitemap)
+	urls = sitemap_urls["loc"].to_list()
+	if uploaded_file is not None:
+        dataframe = pd.read_csv(uploaded_file)
+	st.write(dataframe)
 	#for i in urls:
 		#endpoint= f"https://bing.com/indexnow?url={i}&key={api_key}"
 		#response = requests.get(endpoint)
