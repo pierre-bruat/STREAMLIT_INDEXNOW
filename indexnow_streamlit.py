@@ -19,7 +19,7 @@ def input_to_df(input):
 
 
 header = st.title('Index my urls now with XML sitemap')
-
+st.expander('STEP 1: Configure your extraction'):
 form = st.form(key='my-form')
 api_key = form.text_input("Insert your API key")
 uploaded_file = form.file_uploader("Upload your CSV file")
@@ -45,6 +45,7 @@ if submit:
 		#else: st.write(f"❌ something went wrong with {y}")
 		#time.sleep(2)
 
+st.expander('STEP 1: Configure your extraction'):
 header_2 = st.title('Index my urls now with list of urls')
 form_2 = st.form(key='my-form-2')
 api_key = form_2.text_input("Insert your API key")
