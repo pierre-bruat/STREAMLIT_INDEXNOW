@@ -22,20 +22,7 @@ xml_sitemap = form.text_input("Insert your XML sitemap url")
 
 urls_list = form.file_uploader("Choose a CSV file", accept_multiple_files=True, type=["txt"])
 submit = form.form_submit_button('Submit')
-if submit:
-	sitemap_urls = adv.sitemap_to_df(xml_sitemap)
-	urls_df = pd.read_csv(urls_list)
-	urls_2 = urls_df.values.tolist()
-	urls = sitemap_urls["loc"].to_list()
-	st.write(urls_list)
-	for i in urls:
-		endpoint= f"https://bing.com/indexnow?url={i}&key={api_key}"
-		response = requests.get(endpoint)
-		st.write(response)
-		if response != "error":
-			st.write(f"✅ URL submitted successfully for {i}")
-		else: st.write(f"❌ something went wrong with {i}")
-		time.sleep(2)
+
 if submit:
 	urls_df = pd.read_csv(urls_list)
 	st.write(urls_df)
