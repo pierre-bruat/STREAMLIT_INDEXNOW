@@ -28,7 +28,7 @@ submit = form.form_submit_button('Submit')
 
 if submit:
 	sitemap_urls = adv.sitemap_to_df(xml_sitemap)
-	urls = urls["urls"].to_list()
+	urls = urls["loc"].to_list()
 	urls = input_to_df(uploaded_file)
 	urls = urls["urls"].to_list()
 	for i in urls:
