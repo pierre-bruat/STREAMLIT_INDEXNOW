@@ -23,5 +23,5 @@ if submit:
 		#if response.content == "[200]":
 			#st.write(f"Job is done for {i}")
 		#else: st.write(f"something went wrong with {i}")
-		st.write(response.content)
+		st.write(response[i])
 		time.sleep(2)
