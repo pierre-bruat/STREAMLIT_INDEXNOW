@@ -22,6 +22,7 @@ if submit:
 		response = requests.get(endpoint)
 		if response == "<Response [200]>":
 			st.write(f"Job is done for {i}")
-			else st.write(f"something went wrong with {i}")
+			else: 
+				st.write(f"something went wrong with {i}")
 		#st.write(response.status_code, response.content)
 		time.sleep(2)
