@@ -7,17 +7,14 @@ import io
 import streamlit as st
 
 
-@st.cache
-
 ###### FORMULAIRE ########
-st.title('Index my urls now')
+header = st.title('Index my urls now')
 form = st.form(key='my-form')
 api_key = form.text_input("Insert your API key")
 xml_sitemap = form.text_input("Insert your XML sitemap url")
 urls_list = form.file_uploader("Choose a CSV file", accept_multiple_files=True)
 
 if submit:
-	if 
 	sitemap_urls = adv.sitemap_to_df(xml_sitemap)
     url = sitemap_urls["loc"].to_list()
     for i in url:
