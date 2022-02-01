@@ -24,9 +24,9 @@ if submit:
 		else: st.write(f"❌ something went wrong with {i}")
 		time.sleep(2)
 
-form = st.form(key='my-form-2')
+form_2 = st.form(key='my-form-2')
 xml_sitemap = form_.text_input("Insert your XML sitemap url")
-submit = form.form_submit_button('Submit')
+submit = form.form_2_submit_button('Submit')
 if submit:
 	sitemap_urls = adv.sitemap_to_df(xml_sitemap)
 	urls = sitemap_urls["loc"].to_list()
