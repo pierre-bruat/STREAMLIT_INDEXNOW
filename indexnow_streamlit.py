@@ -5,7 +5,6 @@ import json
 import time
 import io
 import streamlit as st
-
 from io import StringIO
 from urllib import request
 from bs4 import BeautifulSoup
@@ -21,7 +20,7 @@ def input_to_df(input):
 def sitemap_ping(xml_sitemap_google):
     url = "http://www.google.com/ping?sitemap=" + xml_sitemap_google
     #print(url)
-    response = urllib.request.urlopen(xml_sitemap_google)
+    response = urllib.request.urlopen(url)
     soup = BeautifulSoup(response.read(), "html.parser")
     print(soup.find("h2").text)
 
