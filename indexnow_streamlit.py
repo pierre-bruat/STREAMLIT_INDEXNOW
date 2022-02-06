@@ -8,6 +8,7 @@ import streamlit as st
 
 from io import StringIO
 from urllib import request
+from bs4 import BeautifulSoup
 
 
 ###### FORMULAIRE ########
@@ -15,6 +16,27 @@ from urllib import request
 def input_to_df(input):
 	df = pd.read_csv(uploaded_file)
 	return df
+
+
+def sitemap_ping(url_xml):
+    url = "http://www.google.com/ping?sitemap=" + url_xml
+    #print(url)
+    response = urllib.request.urlopen(url)
+    soup = BeautifulSoup(response.read(), "html.parser")
+    print(soup.find("h2").text)
+
+
+st.title("Hey Google, come here to crawl my sitemap ! 🤖")
+with st.expander('Ping Google to crawl my sitemap'):
+	form_3 = st.form(key='my-form-3')
+	xml_sitemap_google = form_3.text_input("Insert your XML sitemap url")
+	submit = form.form_submit_button('Submit')
+	if submit:
+		sitemap_ping(xml_sitemap_google)
+		if response != "error":
+				st.write(f"✅ URL submitted successfully for {i}")
+		else: st.write(f"❌ something went wrong with {i}")
+
 
 st.title("Index my urls now ! 🤖")
 with st.expander('from a list of urls'):
