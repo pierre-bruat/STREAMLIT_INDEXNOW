@@ -5,4 +5,4 @@ bs4
 requests
 times
 git+https://github.com/eliasdabbas/advertools.git
-urlopen
+urllib.request
