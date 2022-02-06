@@ -33,6 +33,7 @@ with st.expander('Ping Google to crawl my sitemap'):
 	submit = form_3.form_submit_button('Submit')
 	if submit:
 		sitemap_ping(xml_sitemap_google)
+		st.write("It's done ! Now check last crawl date in GSC 😉")
 
 
 st.title("Index my urls now ! (Indexnow API style) 🤖")
