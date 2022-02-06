@@ -8,6 +8,7 @@ import streamlit as st
 from io import StringIO
 from urllib import request
 from bs4 import BeautifulSoup
+import urllib3
 
 
 ###### FORMULAIRE ########
