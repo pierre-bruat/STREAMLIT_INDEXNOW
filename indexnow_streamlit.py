@@ -20,9 +20,9 @@ def input_to_df(input):
 def sitemap_ping(xml_sitemap_google):
     url = "http://www.google.com/ping?sitemap=" + xml_sitemap_google
     #print(url)
-    response = urlopen(url)
+    http = urllib3.PoolManager()
+    response = http.request('GET', url)
     soup = BeautifulSoup(response.read(), "html.parser")
-    print(soup.find("h2").text)
 
 
 st.title("Hey Google, come here to crawl my sitemap ! 🤖")
