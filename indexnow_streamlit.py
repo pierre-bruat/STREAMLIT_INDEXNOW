@@ -20,7 +20,7 @@ def input_to_df(input):
 def sitemap_ping(xml_sitemap_google):
     url = "http://www.google.com/ping?sitemap=" + xml_sitemap_google
     #print(url)
-    response = urllib.request.urlopen(url)
+    response = urlopen(url)
     soup = BeautifulSoup(response.read(), "html.parser")
     print(soup.find("h2").text)
 
