@@ -18,10 +18,10 @@ def input_to_df(input):
 	return df
 
 
-def sitemap_ping(url_xml):
-    url = "http://www.google.com/ping?sitemap=" + url_xml
+def sitemap_ping(xml_sitemap_google):
+    url = "http://www.google.com/ping?sitemap=" + xml_sitemap_google
     #print(url)
-    response = urllib.request.urlopen(url)
+    response = urllib.request.urlopen(xml_sitemap_google)
     soup = BeautifulSoup(response.read(), "html.parser")
     print(soup.find("h2").text)
 
@@ -33,9 +33,6 @@ with st.expander('Ping Google to crawl my sitemap'):
 	submit = form_3.form_submit_button('Submit')
 	if submit:
 		sitemap_ping(xml_sitemap_google)
-		if response != "error":
-				st.write(f"✅ URL submitted successfully for {i}")
-		else: st.write(f"❌ something went wrong with {i}")
 
 
 st.title("Index my urls now ! (Indexnow API style) 🤖")
