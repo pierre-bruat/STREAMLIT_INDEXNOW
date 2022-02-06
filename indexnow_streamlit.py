@@ -38,7 +38,7 @@ with st.expander('Ping Google to crawl my sitemap'):
 		else: st.write(f"❌ something went wrong with {i}")
 
 
-st.title("Index my urls now ! 🤖")
+st.title("Index my urls now ! (Indexnow API style) 🤖")
 with st.expander('from a list of urls'):
 	form = st.form(key='my-form')
 	api_key = form.text_input("Insert your API key")
