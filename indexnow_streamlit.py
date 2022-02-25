@@ -45,8 +45,8 @@ with st.expander('from a list of urls'):
 	if submit:
 		#sitemap_urls = adv.sitemap_to_df(xml_sitemap)
 		#sitemap_urls = sitemap_urls["loc"].to_list()
-		#urls_loaded = input_to_df(uploaded_file)
-		#urls_loaded = urls_loaded["urls"].to_list()
+		urls_loaded = input_to_df(uploaded_file)
+		urls_loaded = urls_loaded["urls"].to_list()
 		for i in urls_loaded:
 			endpoint= f"https://bing.com/indexnow?url={i}&key={api_key}"
 			response = requests.get(endpoint)
