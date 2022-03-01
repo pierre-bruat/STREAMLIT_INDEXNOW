@@ -26,8 +26,8 @@ def sitemap_ping(xml_sitemap_google):
     soup = BeautifulSoup(response.read(), "html.parser")
 
 
-st.title("Hey Google, come here to crawl my sitemap ! 🤖")
-with st.expander('Ping Google to crawl my sitemap'):
+st.title("Crawl my XML sitemap now ! 🤖")
+with st.expander('Open and insert your sitemap url'):
 	form_3 = st.form(key='my-form-3')
 	xml_sitemap_google = form_3.text_input("Insert your XML sitemap url")
 	submit = form_3.form_submit_button('Submit')
@@ -36,7 +36,7 @@ with st.expander('Ping Google to crawl my sitemap'):
 		st.write("It's done ! Now check last crawl date in GSC 😉")
 
 
-st.title("Index my urls now ! (Indexnow API style) 🤖")
+st.title("Index my urls now ! 💨")
 with st.expander('from a list of urls'):
 	form = st.form(key='my-form')
 	api_key = form.text_input("Insert your API key")
